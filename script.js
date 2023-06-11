@@ -42,7 +42,7 @@ if (carouselThumbs.querySelectorAll('.carousel-item').length < 2) {
   carouselControls.forEach(function (control) {
     control.remove();
   });
-  document.querySelector('.machine-carousel-container #carousel-thumbs').style.padding = '0 5px';
+  document.querySelector('#carousel-thumbs').style.padding = '0 5px';
 }
 
 // Actualizar la selección del thumbnail al cambiar el slide
@@ -74,3 +74,52 @@ carouselImages.forEach(function (image) {
     }
   });
 });
+
+
+/*Mapa*/
+function initMap() {
+  // Crea un objeto de mapa y especifica el elemento DOM donde se mostrará.
+  var map = new google.maps.Map(document.getElementById('map'), {
+    center: { lat: -38.0009613, lng: -57.5439211 }, // Coordenadas de ejemplo (Nueva York)
+    zoom: 12 // Nivel de zoom
+  });
+
+  // Crea un marcador para la ubicación específica.
+  var marker = new google.maps.Marker({
+    position: { lat: -38.0009613, lng: -57.5439211 }, // Coordenadas de ejemplo (Nueva York)
+    map: map,
+    title: 'Mi ubicación'
+  });
+}
+
+
+window.onload = function () {
+  initMap();
+};
+
+
+
+
+/*footer*/
+document.getElementById("contact-form").addEventListener("submit", function (event) {
+  event.preventDefault(); // Evita que se envíe el formulario de forma predeterminada
+
+  // Obtiene los valores de los campos de entrada
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var message = document.getElementById("message").value;
+
+  // Construye el enlace de correo electrónico
+  var subject = "Nuevo mensaje de contacto";
+  var mailtoLink = "" +
+    "?subject=" + encodeURIComponent(subject) +
+    "&body=" + encodeURIComponent("Nombre: " + name + "\nEmail: " + email + "\nMensaje: " + message);
+
+  // Abre el cliente de correo electrónico predeterminado
+  window.location.href = mailtoLink;
+});
+
+
+
+
+

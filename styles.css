@@ -4,29 +4,14 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.nav-link {
-  font-size: 20px;
-  color: rgb(240, 248, 255);
-}
-
-.nav-link:hover {
-  color: rgb(37, 37, 37);
-}
 
 
-.navbar-toggler {
-  margin-left: 95%;
-}
-
-.collapse.navbar-collapse {
-  margin-left: 84%;
-}
 
 
 #banner {
-  background-image: linear-gradient(rgb(0, 0, 0, 0.2),
+  background-image: linear-gradient(rgb(0, 0, 0, 0.4),
       rgb(0, 0, 0, 0.2)),
-    url("./imagenes depto/vistaAlMar2.jpg");
+    url("./imagenes depto/foto2.webp");
   background-position: center;
   background-size: cover;
   width: 100%;
@@ -34,10 +19,14 @@
 }
 
 
+#living {
+  margin-top: 8%;
+}
 
 
-.text-center {
+.bienvenida {
   color: rgb(240, 248, 255);
+  margin-top: -3%;
 }
 
 h1 {
@@ -47,7 +36,27 @@ h1 {
 h3 {
   font-family: sans-serif;
   font-family: 'Bellota', cursive;
+  display: flex;
+  justify-content: center;
 }
+
+
+.iniciotexto{
+  margin-top: 5%;
+}
+
+
+h2 {
+  font-family: sans-serif;
+  font-family: 'Bellota', cursive;
+  display: flex;
+  justify-content: center;
+  color: rgb(0, 0, 0);
+  font-size: 40px;
+  margin-bottom: 5%;
+}
+
+
 
 
 .rounded.float-start.living {
@@ -56,19 +65,21 @@ h3 {
   outline-offset: 10px;
 }
 
-.container {
-  margin-top: 6%;
+
+.rounded.float-start.living:hover {
+  transform: scale(1.1);
+  transition: 3s;
 }
+
 
 #servicios {
-  background-color: rgb(243, 243, 243);
+  background-color: #f3f3f3;
 }
 
-
-
 .card {
+  background-color: #f3f3f3;
   border: none;
-  background-color: rgb(243, 243, 243);
+
 }
 
 
@@ -84,6 +95,11 @@ h3 {
 
 
 /*galeria de fotos*/
+
+.carousel-container {
+  width: 90%;
+}
+
 .carousel {
   position: relative;
 }
@@ -137,3 +153,216 @@ h3 {
 }
 
 /*fin de la galeria de fotos*/
+
+/*footer*/
+h1 {
+  text-align: center;
+}
+
+form {
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+label,
+input,
+textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.formulario {
+  background-color: #000000aa;
+}
+
+#contact-form {
+  margin-bottom: -1%;
+}
+
+
+.contactocolor,
+label {
+  color: rgb(240, 248, 255);
+}
+
+#message {
+  height: 200px;
+}
+
+
+
+
+
+
+
+
+/*
+ * Made by Erik Terwan
+ * 24th of November 2015
+ * MIT License
+ *
+ *
+ * If you are thinking of using this in
+ * production code, beware of the browser
+ * prefixes.
+ */
+
+ #menuToggle
+ {
+   display: block;
+   position: absolute;
+   margin-top: 1%;
+   
+ 
+   
+   
+   
+   z-index: 1;
+   
+   -webkit-user-select: none;
+   user-select: none;
+ }
+ 
+ #menuToggle a
+ {
+   text-decoration: none;
+   color: #ffffff;
+   
+   transition: color 0.3s ease;
+ }
+ 
+ #menuToggle a:hover
+ {
+   color: rgb(71, 123, 255);
+ }
+ 
+ 
+ #menuToggle input
+ {
+   display: block;
+   width: 40px;
+   height: 32px;
+   position: absolute;
+   top: -7px;
+   left: -5px;
+   
+   
+   cursor: pointer;
+   
+   opacity: 0; /* hide this */
+   z-index: 2; /* and place it over the hamburger */
+   
+   -webkit-touch-callout: none;
+ }
+ 
+ /*
+  * Just a quick hamburger
+  */
+ #menuToggle span
+ {
+   display: block;
+   width: 33px;
+   height: 4px;
+   margin-bottom: 5px;
+   position: relative;
+   
+   background: #cdcdcd;
+   border-radius: 3px;
+   
+   z-index: 1;
+   
+   transform-origin: 4px 0px;
+   
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               opacity 0.55s ease;
+ }
+ 
+ #menuToggle span:first-child
+ {
+   transform-origin: 0% 0%;
+ }
+ 
+ #menuToggle span:nth-last-child(2)
+ {
+   transform-origin: 0% 100%;
+ }
+ 
+ /* 
+  * Transform all the slices of hamburger
+  * into a crossmark.
+  */
+ #menuToggle input:checked ~ span
+ {
+   opacity: 1;
+   transform: rotate(45deg) translate(-2px, -1px);
+   background: #cdcdcd;
+ }
+ 
+ /*
+  * But let's hide the middle one.
+  */
+ #menuToggle input:checked ~ span:nth-last-child(3)
+ {
+   opacity: 0;
+   transform: rotate(0deg) scale(0.2, 0.2);
+ }
+ 
+ /*
+  * Ohyeah and the last one should go the other direction
+  */
+ #menuToggle input:checked ~ span:nth-last-child(2)
+ {
+   transform: rotate(-45deg) translate(0, -1px);
+ }
+ 
+ /*
+  * Make this absolute positioned
+  * at the top left of the screen
+  */
+ #menu
+ {
+   position: absolute;
+   width: 300px;
+   margin: -100px 0 0 -50px;
+   padding: 50px;
+   padding-top: 125px;
+   
+
+   list-style-type: none;
+   -webkit-font-smoothing: antialiased;
+   /* to stop flickering of text in safari */
+   
+   transform-origin: 0% 0%;
+   transform: translate(-100%, 0);
+   
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+ }
+ 
+ #menu li
+ {
+   padding: 10px 0;
+   font-size: 22px;
+ }
+ 
+ /*
+  * And let's slide it in from the left
+  */
+ #menuToggle input:checked ~ ul
+ {
+   transform: none;
+ }
+
