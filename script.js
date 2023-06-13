@@ -111,7 +111,7 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
 
   // Construye el enlace de correo electrónico
   var subject = "Nuevo mensaje de contacto";
-  var mailtoLink = "" +
+  var mailtoLink = "mailto:evu.penfold.11@gmail.com" +
     "?subject=" + encodeURIComponent(subject) +
     "&body=" + encodeURIComponent("Nombre: " + name + "\nEmail: " + email + "\nMensaje: " + message);
 
@@ -120,6 +120,8 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
 });
 
 
-
-
-
+/*boton contactenos para dirigirnos a la seccion contacto*/
+function scrollToContact() {
+  const contactoSection = document.getElementById("contacto");
+  contactoSection.scrollIntoView({ behavior: "smooth" });
+}

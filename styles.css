@@ -18,6 +18,37 @@
   height: 802px;
 }
 
+.btn {
+  color: #000000;
+  background-color: #9295ff;
+  animation: shake 2s infinite;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+.btn:hover {
+  color: #000000;
+  background-color: #7277ff;
+}
+
+
+@keyframes shake {
+  10% {
+    transform: scale(1.05) rotate(5deg);
+  }
+
+  20% {
+    transform: scale(1.05) rotate(-5deg);
+  }
+
+  30% {
+    transform: scale(1.05) rotate(5deg);
+  }
+
+  40% {
+    transform: none;
+  }
+}
 
 #living {
   margin-top: 8%;
@@ -41,7 +72,7 @@ h3 {
 }
 
 
-.iniciotexto{
+.iniciotexto {
   margin-top: 5%;
 }
 
@@ -56,11 +87,13 @@ h2 {
   margin-bottom: 5%;
 }
 
+.col-lg-7.my-4 {
+  padding-left: 4%;
+}
 
 
 
 .rounded.float-start.living {
-  width: 70%;
   outline: 1px solid rgb(119, 119, 119);
   outline-offset: 10px;
 }
@@ -72,14 +105,8 @@ h2 {
 }
 
 
-#servicios {
-  background-color: #f3f3f3;
-}
-
 .card {
-  background-color: #f3f3f3;
   border: none;
-
 }
 
 
@@ -154,6 +181,22 @@ h2 {
 
 /*fin de la galeria de fotos*/
 
+
+#map {
+  width: 90%;
+}
+
+
+.fa-location-dot {
+  margin-top: -3%;
+}
+
+.lista-ubicacion li {
+  margin-bottom: 20px;
+}
+
+
+
 /*footer*/
 h1 {
   text-align: center;
@@ -220,149 +263,330 @@ label {
  * prefixes.
  */
 
- #menuToggle
- {
-   display: block;
-   position: absolute;
-   margin-top: 1%;
-   
- 
-   
-   
-   
-   z-index: 1;
-   
-   -webkit-user-select: none;
-   user-select: none;
- }
- 
- #menuToggle a
- {
-   text-decoration: none;
-   color: #ffffff;
-   
-   transition: color 0.3s ease;
- }
- 
- #menuToggle a:hover
- {
-   color: rgb(71, 123, 255);
- }
- 
- 
- #menuToggle input
- {
-   display: block;
-   width: 40px;
-   height: 32px;
-   position: absolute;
-   top: -7px;
-   left: -5px;
-   
-   
-   cursor: pointer;
-   
-   opacity: 0; /* hide this */
-   z-index: 2; /* and place it over the hamburger */
-   
-   -webkit-touch-callout: none;
- }
- 
- /*
+#menuToggle {
+  display: block;
+  position: absolute;
+  margin-top: 1%;
+
+
+
+
+
+  z-index: 1;
+
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a {
+  text-decoration: none;
+  color: #ffffff;
+
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover {
+  color: #777cff;
+}
+
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+
+
+  cursor: pointer;
+
+  opacity: 0;
+  /* hide this */
+  z-index: 2;
+  /* and place it over the hamburger */
+
+  -webkit-touch-callout: none;
+}
+
+/*
   * Just a quick hamburger
   */
- #menuToggle span
- {
-   display: block;
-   width: 33px;
-   height: 4px;
-   margin-bottom: 5px;
-   position: relative;
-   
-   background: #cdcdcd;
-   border-radius: 3px;
-   
-   z-index: 1;
-   
-   transform-origin: 4px 0px;
-   
-   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-               opacity 0.55s ease;
- }
- 
- #menuToggle span:first-child
- {
-   transform-origin: 0% 0%;
- }
- 
- #menuToggle span:nth-last-child(2)
- {
-   transform-origin: 0% 100%;
- }
- 
- /* 
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+
+  background: rgb(240, 248, 255);
+  border-radius: 3px;
+
+  z-index: 1;
+
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+    opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+/* 
   * Transform all the slices of hamburger
   * into a crossmark.
   */
- #menuToggle input:checked ~ span
- {
-   opacity: 1;
-   transform: rotate(45deg) translate(-2px, -1px);
-   background: #cdcdcd;
- }
- 
- /*
+#menuToggle input:checked~span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: rgb(240, 248, 255);
+}
+
+/*
   * But let's hide the middle one.
   */
- #menuToggle input:checked ~ span:nth-last-child(3)
- {
-   opacity: 0;
-   transform: rotate(0deg) scale(0.2, 0.2);
- }
- 
- /*
+#menuToggle input:checked~span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
   * Ohyeah and the last one should go the other direction
   */
- #menuToggle input:checked ~ span:nth-last-child(2)
- {
-   transform: rotate(-45deg) translate(0, -1px);
- }
- 
- /*
+#menuToggle input:checked~span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
   * Make this absolute positioned
   * at the top left of the screen
   */
- #menu
- {
-   position: absolute;
-   width: 300px;
-   margin: -100px 0 0 -50px;
-   padding: 50px;
-   padding-top: 125px;
-   
+#menu {
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
 
-   list-style-type: none;
-   -webkit-font-smoothing: antialiased;
-   /* to stop flickering of text in safari */
-   
-   transform-origin: 0% 0%;
-   transform: translate(-100%, 0);
-   
-   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
- }
- 
- #menu li
- {
-   padding: 10px 0;
-   font-size: 22px;
- }
- 
- /*
+
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+}
+
+#menu li {
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
   * And let's slide it in from the left
   */
- #menuToggle input:checked ~ ul
- {
-   transform: none;
- }
+#menuToggle input:checked~ul {
+  transform: none;
+}
 
+
+
+/*redes sociales*/
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  outline: none;
+}
+
+
+/* redondel boton Insta*/
+
+.hover {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+  background-color: PURPLE;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+}
+
+
+/* Parte superior de la I partida */
+
+.hover:before,
+.hover:after {
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  transition: 0.25s linear;
+  z-index: 1;
+  background-image: linear-gradient(to top right, #F35834, #EC2B49, #DB0271, #AB0B9E, #6C1CCF, #383DED);
+}
+
+
+
+/* Mitad izquierda del hover insta */
+
+.hover:before {
+  content: '';
+  left: 0;
+  justify-content: flex-end;
+  background-image: linear-gradient(to top right, #FBD67A, #F5923D, #F35834, #EC2B49, #DB0271);
+}
+
+
+
+/* Mitad derecha del hover insta*/
+
+.hover:after {
+  content: '';
+  bottom: 0;
+  justify-content: flex-start;
+}
+
+
+
+/* Fondo insta*/
+
+.hover:hover {
+  background-image: linear-gradient(to top right, #FBD67A, #F5923D, #F35834, #EC2B49, #DB0271, #AB0B9E, #6C1CCF, #383DED);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+
+
+/* Para ocultar la letra I*/
+
+.hover:hover span {
+  opacity: 0;
+  z-index: -3;
+}
+
+
+
+/* Para ocultar la mitad lado izquierdo insta */
+
+.hover:hover:before {
+  opacity: 0.5;
+  transform: translateY(-100%);
+}
+
+
+
+/* Para ocultar la mitad lado derecho insta*/
+
+.hover:hover:after {
+  opacity: 0.5;
+  transform: translateY(100%);
+}
+
+
+
+/* Letra y logo, no funciona con svg's insta*/
+
+.hover span {
+  position: absolute;
+  top: 3px;
+  left: -2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: whitesmoke;
+  font-family: 'Fira Mono', monospace;
+  font-size: 24px;
+  font-weight: 700;
+  opacity: 1;
+  transition: opacity 0.25s;
+  z-index: 2;
+  text-shadow: 3px 3px rgba(70, 98, 127, 0.7);
+  transform: scale(1);
+}
+
+
+
+/* Logo insta*/
+
+.hover .social-link {
+  position: relative;
+  left: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  height: 100%;
+  color: whitesmoke;
+  font-size: 24px;
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+
+
+/* sombra Logo insta*/
+
+.hover .social-link i {
+  text-shadow: 1px 1px rgba(70, 98, 127, 0.7);
+  transform: scale(1);
+}
+
+
+
+
+/* Animacion del logo insta*/
+
+.hover .social-link:hover i {
+  animation: pulse 1s linear;
+}
+
+
+@keyframes pulse {
+  40% {
+    transform: scale(1.3);
+  }
+
+  60% {
+    transform: scale(1.2);
+  }
+
+  80% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.menuBallFooter {
+  display: inline-block;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin: 20px 10px;
+}
+
+
+
+.ins {
+  width: 70px;
+}
