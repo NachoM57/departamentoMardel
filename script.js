@@ -125,3 +125,12 @@ function scrollToContact() {
   const contactoSection = document.getElementById("contacto");
   contactoSection.scrollIntoView({ behavior: "smooth" });
 }
+
+
+
+
+
+
+
+
+
