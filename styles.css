@@ -392,11 +392,10 @@ input[type="submit"]:hover {
 
 .formulario {
   background-color: #000000aa;
+  padding: 20px;
 }
 
-#contact-form {
-  margin-bottom: -1%;
-}
+
 
 
 
@@ -409,8 +408,14 @@ label {
   height: 200px;
 }
 
+.copyright {
+  background-color: #000000c7;
+}
 
 
+.copy {
+  color: #ffffff;
+}
 
 /*redes sociales*/
 
