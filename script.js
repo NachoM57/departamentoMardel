@@ -76,26 +76,6 @@ carouselImages.forEach(function (image) {
 });
 
 
-/*Mapa*/
-function initMap() {
-  // Crea un objeto de mapa y especifica el elemento DOM donde se mostrará.
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: { lat: -38.0009613, lng: -57.5439211 }, // Coordenadas de ejemplo (Nueva York)
-    zoom: 12 // Nivel de zoom
-  });
-
-  // Crea un marcador para la ubicación específica.
-  var marker = new google.maps.Marker({
-    position: { lat: -38.0009613, lng: -57.5439211 }, // Coordenadas de ejemplo (Nueva York)
-    map: map,
-    title: 'Mi ubicación'
-  });
-}
-
-
-window.onload = function () {
-  initMap();
-};
 
 
 

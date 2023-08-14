@@ -347,9 +347,6 @@ h2 {
 
 
 /*ubicacion*/
-#map {
-  width: 90%;
-}
 
 
 .lista-ubicacion li {
@@ -409,7 +406,7 @@ label {
 }
 
 .copyright {
-  background-color: #000000c7;
+  background-color: #000000ce;
 }
 
 
